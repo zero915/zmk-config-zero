@@ -100,7 +100,7 @@
         email: email {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp B &kp R &kp Y &kp A &kp N &kp AT &kp P &kp E &kp C &kp J &kp O kp DOT &kp C &kp O &kp M>;
+            bindings = <&none &kp B &kp R &kp Y &kp A &kp N &kp AT &kp P &kp E &kp C &kp J &kp O &kp DOT &kp C &kp O &kp M>;
             label = "EMAIL";
         };
 
