@@ -146,7 +146,7 @@
 &kp C_VOL_UP &kp F1            &kp F2           &kp F3        &kp F4             &email           &kp HOME     &kp PAGE_DOWN   &kp PG_UP   &kp END       &kp C_PREV &kp C_NEXT
 &kp C_VOL_DN &hm LEFT_META F5  &hm LEFT_ALT F6  &hm LCTRL F7  &hm LEFT_SHIFT F8  &hm LC(V) LC(C)  &kp LEFT     &kp DOWN        &kp UP      &kp RIGHT     &kp LG(R)  &kp LC(R)
 &kp C_PP     &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN        &kp LA(LEFT) &kp LC(LS(TAB)) &kp LC(TAB) &kp LA(RIGHT) &kp LC(T)  &kp LC(LS(T))
-                                                &bt BT_CLR    &bt BT_NXT         &bt BT_PRV       &trans       &trans          &trans
+                                                &bt BT_CLR    &bt BT_NXT         &bt BT_PRV       &trans       &trans          &ext_power EP_TOG
                         >;
                 };
         };
