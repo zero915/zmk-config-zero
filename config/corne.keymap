@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 / {
         
@@ -141,7 +142,7 @@
 // | Vol+ |  F1  |  F2  |  F3  |  F4   |  email |   | HOME  | PG_DN | PG_UP | END    | Prev | Next |
 // | Vol- |  F5  |  F6  |  F7  |  F8   |  ^V ^C |   | LEFT  | DOWN  |  UP   | RIGHT  |      |      |
 // | Play |  F9  |  F10 |  F11 |  F12  |  PRTSC |   | alt-L | tab-L | tab-R | alt-R  |      |      |
-//                     | BTCLR | BTNxt | BTPrev |   | ENT   |       | ALT   |
+//                     | BTCLR | BTNxt | BTPrev |   | ENT   |       | RESET |
                         bindings = <
 &kp C_VOL_UP &kp F1            &kp F2           &kp F3        &kp F4             &email           &kp HOME     &kp PAGE_DOWN   &kp PG_UP   &kp END       &kp C_PREV &kp C_NEXT
 &kp C_VOL_DN &hm LEFT_META F5  &hm LEFT_ALT F6  &hm LCTRL F7  &hm LEFT_SHIFT F8  &hm LC(V) LC(C)  &kp LEFT     &kp DOWN        &kp UP      &kp RIGHT     &kp LG(R)  &kp LC(R)
