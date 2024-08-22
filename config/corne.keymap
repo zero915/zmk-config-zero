@@ -170,13 +170,13 @@
             // -----------------------------------------------------------------------------------------
             // |   |  F1  |  F2  |  F3 |  F4  | email |   |    | HOME |  ▲   | END | PG_UP |        |
             // |   |  F5  |  F6  |  F7 |  F8  | ^V ^C |   |    |  ◄   |  ▼   |  ►  | PG_DN | EP_TOG |
-            // |   |  F9  |  F10 | F11 | F12  | PSCRN |   | ^R | ^ T  | ^⇧ T |     |       |        |
+            // |   |  F9  |  F10 | F11 | F12  | PSCRN |   | ^R | ^S   | ^ T  | ^⇧T |       |        |
             //                   |     |      |       |   |    |      |  |
 
             bindings = <
-&trans  &kp F1            &kp F2           &kp F3        &kp F4             &email             &trans     &kp HOME     &kp UP           &kp END    &kp PG_UP      &trans
-&trans  &hm LEFT_META F5  &hm LEFT_ALT F6  &hm LCTRL F7  &hm LEFT_SHIFT F8  &hm LC(V) LC(C)    &trans     &kp LEFT     &kp DOWN         &kp RIGHT  &kp PAGE_DOWN  &ext_power EP_TOG
-&trans  &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN          &kp LC(R)  &kp LC(TAB)  &kp LC(RS(TAB))  &trans     &trans         &trans
+&trans  &kp F1            &kp F2           &kp F3        &kp F4             &email             &trans     &kp HOME     &kp UP       &kp END         &kp PG_UP      &trans
+&trans  &hm LEFT_META F5  &hm LEFT_ALT F6  &hm LCTRL F7  &hm LEFT_SHIFT F8  &hm LC(V) LC(C)    &trans     &kp LEFT     &kp DOWN     &kp RIGHT       &kp PAGE_DOWN  &ext_power EP_TOG
+&trans  &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN          &kp LC(R)  &kp LC(S)    &kp LC(TAB)  &kp LC(RS(TAB)) &trans         &trans
                                            &trans        &trans             &trans             &trans     &trans       &trans
             >;
         };
