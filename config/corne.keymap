@@ -156,7 +156,7 @@
             // |  TAB  |  !  |  @  |  {  |  }  | "|" |   |  +  |  7  |  8  |  9  |  *  | Del |
             // | EP_ON |  #  |  $  |  (  |  )  |  `  |   |  -  |  4  |  5  |  6  |  ;  | Ins |
             // |  CAPS |  %  |  ^  |  [  |  ]  |  ~  |   |  =  |  1  |  2  |  3  |  \  | ESC |
-            //                    | GUI |     | SPC |   | ENT |  .  |  0  |
+            //                     | GUI |     | SPC |   | ENT |  .  |  0  |
 
             bindings = <
 &kp TAB           &kp EXCL     &kp AT      &kp LBRC  &kp RBRC  &kp PIPE     &kp PLUS   &kp N7   &kp N8  &kp N9  &kp STAR  &kp DEL
@@ -168,25 +168,25 @@
 
         raise_layer {
             // -----------------------------------------------------------------------------------------
-            // |   |  F1  |  F2  |  F3 |  F4  | email |   | HOME | PG_DN | PG_UP  | END    |    |    |
-            // |   |  F5  |  F6  |  F7 |  F8  | ^V ^C |   | LEFT | DOWN  |  UP    | RIGHT  |    |    |
-            // |   |  F9  |  F10 | F11 | F12  | PRTSC |   | ^R   | ^ T   | ^⇧ T   |        |    |    |
-            //                   |     |      |       |   |      |       | EP_TOG |
+            // |   |  F1  |  F2  |  F3 |  F4  | email |   |    | HOME |  ▲   | END | PG_UP |        |
+            // |   |  F5  |  F6  |  F7 |  F8  | ^V ^C |   |    |  ◄   |  ▼   |  ►  | PG_DN | EP_TOG |
+            // |   |  F9  |  F10 | F11 | F12  | PSCRN |   | ^R | ^ T  | ^⇧ T |     |       |        |
+            //                   |     |      |       |   |    |      |  |
 
             bindings = <
-&trans  &kp F1            &kp F2           &kp F3        &kp F4             &email             &kp HOME   &kp PAGE_DOWN  &kp PG_UP          &kp END    &trans  &trans
-&trans  &hm LEFT_META F5  &hm LEFT_ALT F6  &hm LCTRL F7  &hm LEFT_SHIFT F8  &hm LC(V) LC(C)    &kp LEFT   &kp DOWN       &kp UP             &kp RIGHT  &trans  &ext_power EP_TOG
-&trans  &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN          &kp LC(R)  &kp LC(TAB)    &kp LC(RS(TAB))    &trans     &trans  &trans
-                                           &trans        &trans             &trans             &trans     &trans         &trans
+&trans  &kp F1            &kp F2           &kp F3        &kp F4             &email             &trans    &kp HOME    &kp UP          &kp END    &kp PG_UP     &trans
+&trans  &hm LEFT_META F5  &hm LEFT_ALT F6  &hm LCTRL F7  &hm LEFT_SHIFT F8  &hm LC(V) LC(C)    &trans    &kp LEFT    &kp DOWN        &kp RIGHT  &kp PAGE_DOWN &ext_power EP_TOG
+&trans  &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN          &kp LC(R) &kp LC(TAB) &kp LC(RS(TAB)) &trans     &trans        &trans
+                                           &trans        &trans             &trans             &trans    &trans      &trans
             >;
         };
 
         extended_layer {
             // -----------------------------------------------------------------------------------------
             // |     |     |     | Prv | Nxt | P/P |   | Vol-  | Vol+  | Mute |       |    |    |
-            // |     |     |     |     |     |     |   | Bri-  | Bri+  |   |   |    |    |
+            // |     |     |     |     |     |     |   | Bri-  | Bri+  |      |       |    |    |
             // | BTX | BT1 | BT2 | BT3 | BT4 | BT5 |   | alt-L | alt-R | ^Tab | ^⇧Tab |    |    |
-            //                       |     |     |   |       |       |      |       |
+            //                         |     |     |   |       |       |      |       |
 
             label = "EXT";
             bindings = <
