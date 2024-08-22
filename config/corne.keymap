@@ -109,6 +109,11 @@
             timeout-ms = <0>;
             require-prior-idle-ms = <0>;
         };
+
+        escape {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+        };
     };
 
     macros {
@@ -182,6 +187,7 @@
             // |   |     |     |     |     |     |   | Bri-  | Bri+  | ^ T  | ^⇧ T  |    |    |
             // |   | BT1 | BT2 | BT3 | BT4 | BT5 |   | alt-L | alt-R | ^Tab | ^⇧Tab |    |    |
             //                       |     |     |   |       |       |      |       |
+
             label = "EXT";
             bindings = <
 &trans  &trans        &trans        &kp K_PREV    &kp K_NEXT    &kp K_PP        &kp C_VOL_DN          &kp C_VOL_UP          &kp K_MUTE   &trans           &trans  &trans
