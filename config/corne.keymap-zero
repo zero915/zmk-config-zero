@@ -68,6 +68,11 @@
     combos {
         compatible = "zmk,combos";
 
+        caps {
+            bindings = <&kp CAPS>;
+            key-positions = <16 19>;
+        };
+
         jk_fix {
             bindings = <&kp ESCAPE>;
             key-positions = <31 32>;
@@ -81,26 +86,6 @@
         dash {
             bindings = <&kp MINUS>;
             key-positions = <4 7>;
-        };
-
-        Clear_BLE_Profile {
-            bindings = <&bt BT_CLR>;
-            key-positions = <0 38 5>;
-        };
-
-        Space {
-            bindings = <&kp SPACE>;
-            key-positions = <29 28>;
-        };
-
-        Enter {
-            bindings = <&kp ENTER>;
-            key-positions = <17 16>;
-        };
-
-        Capslock {
-            bindings = <&kp CAPS>;
-            key-positions = <16 19>;
         };
     };
 
