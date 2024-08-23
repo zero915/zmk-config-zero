@@ -144,9 +144,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp RCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &lt 1 SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &lt 2 ESC
+&kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&lt 2 RCTRL &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &lt 1 SQT
+&kp LSHFT   &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
@@ -154,13 +154,13 @@
         lower_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB  |  !  |  @  |  {  |  }  | "|" |   |  +  |  7  |  8  |  9  |  *  | Del |
-            // | EP_ON |  #  |  $  |  (  |  )  |  `  |   |  -  |  4  |  5  |  6  |  ;  | Ins |
+            // | EP_ON |  #  |  $  |  (  |  )  |  `  |   |  -  |  4  |  5  |  6  |  :  | Ins |
             // |  CAPS |  %  |  ^  |  [  |  ]  |  ~  |   |  =  |  1  |  2  |  3  |  \  | ESC |
             //                     | GUI |     | SPC |   | ENT |  .  |  0  |
 
             bindings = <
 &kp TAB           &kp EXCL     &kp AT      &kp LBRC  &kp RBRC  &kp PIPE     &kp PLUS   &kp N7   &kp N8  &kp N9  &kp STAR  &kp DEL
-&ext_power EP_ON  &kp HASH     &kp DOLLAR  &kp LPAR  &kp RPAR  &kp GRAVE    &kp MINUS  &kp N4   &kp N5  &kp N6  &kp SEMI  &kp INS
+&ext_power EP_ON  &kp HASH     &kp DOLLAR  &kp LPAR  &kp RPAR  &kp GRAVE    &kp MINUS  &kp N4   &kp N5  &kp N6  &kp COLON &kp INS
 &kp CAPS          &kp PERCENT  &kp CARET   &kp LBKT  &kp RBKT  &kp TILDE    &kp EQUAL  &kp N1   &kp N2  &kp N3  &kp BSLH  &kp ESC
                                            &kp LGUI  &trans    &kp SPACE    &kp RET    &kp DOT  &kp N0
             >;
@@ -169,9 +169,9 @@
         raise_layer {
             // -----------------------------------------------------------------------------------------
             // |   |  F1  |  F2  |  F3 |  F4  | email |   |    | HOME |  ▲   | END | PG_UP |        |
-            // |   |  F5  |  F6  |  F7 |  F8  | ^V ^C |   |    |  ◄   |  ▼   |  ►  | PG_DN | EP_TOG |
-            // |   |  F9  |  F10 | F11 | F12  | PSCRN |   | ^R | ^S   | ^ T  | ^⇧T |       |        |
-            //                   |     |      |       |   |    |      |  |
+            // |   |  F5  |  F6  |  F7 |  F8  | ^V/^C |   |    |   ◄  |  ▼   |  ►  | PG_DN | EP_TOG |
+            // |   |  F9  |  F10 | F11 | F12  | PSCRN |   | ^R |  ^S  | ^ T  | ^⇧T |       |        |
+            //                   |     |      |       |   |    |      |      |
 
             bindings = <
 &trans  &kp F1            &kp F2           &kp F3        &kp F4             &email             &trans     &kp HOME     &kp UP       &kp END         &kp PG_UP      &trans
