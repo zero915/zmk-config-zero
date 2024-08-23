@@ -138,9 +138,9 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP  |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | LWR/' |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RSE/ESC   |
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP    |
+            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | LWR/'   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RSE/ESC |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
@@ -160,7 +160,7 @@
 
             bindings = <
 &kp TAB           &kp EXCL     &kp AT      &kp LBRC  &kp RBRC  &kp PIPE     &kp PLUS   &kp N7   &kp N8  &kp N9  &kp STAR  &kp DEL
-&ext_power EP_ON  &kp HASH     &kp DOLLAR  &kp LPAR  &kp RPAR  &kp GRAVE    &kp MINUS  &kp N4   &kp N5  &kp N6  &kp COLON &kp INS
+&ext_power EP_TOG &kp HASH     &kp DOLLAR  &kp LPAR  &kp RPAR  &kp GRAVE    &kp MINUS  &kp N4   &kp N5  &kp N6  &kp COLON &kp INS
 &kp CAPS          &kp PERCENT  &kp CARET   &kp LBKT  &kp RBKT  &kp TILDE    &kp EQUAL  &kp N1   &kp N2  &kp N3  &kp BSLH  &kp ESC
                                            &kp LGUI  &trans    &kp SPACE    &kp RET    &kp DOT  &kp N0
             >;
@@ -183,7 +183,7 @@
 
         extended_layer {
             // -----------------------------------------------------------------------------------------
-            // |     |     |     | Prv | Nxt | P/P |   | Vol-  | Vol+  | Mute |       |    |    |
+            // |     |     |     | Prv | Nxt | ►II |   | Vol-  | Vol+  | Mute |       |    |    |
             // |     |     |     |     |     |     |   | Bri-  | Bri+  |      |       |    |    |
             // | BTX | BT1 | BT2 | BT3 | BT4 | BT5 |   | alt-L | alt-R | ^Tab | ^⇧Tab |    |    |
             //                         |     |     |   |       |       |      |       |
