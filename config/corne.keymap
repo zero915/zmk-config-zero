@@ -9,10 +9,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
-&soft_off {
-    hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
-};
-
 / {
     behaviors {
         tp: tap_preferred {
@@ -71,54 +67,9 @@
     combos {
         compatible = "zmk,combos";
 
-        Clear_BLE_Profile {
-            bindings = <&bt BT_CLR>;
-            key-positions = <0 38 5>;
-        };
-
-        BT_next {
-            bindings = <&bt BT_NXT>;
-            key-positions = <5 38 1>;
-        };
-        
-        left_bkt {
-            bindings = <&kp LBKT>;
-            key-positions = <3 2>;
-        };
-
-        right_bkt {
-            bindings = <&kp RBKT>;
-            key-positions = <6 7>;
-        };
-
-        left_par {
-            bindings = <&kp LPAR>;
-            key-positions = <12 13>;
-        };
-
-        right_par {
-            bindings = <&kp RPAR>;
-            key-positions = <16 17>;
-        };
-
-        left_prc {
-            bindings = <&kp LBRC>;
-            key-positions = <22 23>;
-        };
-
-        right_prc {
-            bindings = <&kp RBRC>;
-            key-positions = <27 26>;
-        };
-
-        blsh {
-            bindings = <&kp BSLH>;
-            key-positions = <4 5>;
-        };
-
-        pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <14 15>;
+        jk_fix {
+            bindings = <&kp ESCAPE>;
+            key-positions = <31 32>;
         };
 
         under {
@@ -129,6 +80,11 @@
         dash {
             bindings = <&kp MINUS>;
             key-positions = <4 7>;
+        };
+
+        Clear_BLE_Profile {
+            bindings = <&bt BT_CLR>;
+            key-positions = <0 38 5>;
         };
 
         Space {
@@ -144,6 +100,14 @@
         Capslock {
             bindings = <&kp CAPS>;
             key-positions = <5 6>;
+        };
+
+        BT_next {
+            bindings = <&bt BT_NXT>;
+            key-positions = <5 38 1>;
+            layers = <0>;
+            timeout-ms = <0>;
+            require-prior-idle-ms = <0>;
         };
 
         escape {
@@ -176,10 +140,10 @@
             bindings = <
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
 //│  TAB     │  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │ BKSPC    │
-    &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O       &kp P     &backspace
+    &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O       &kp P     &kp BSPC
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //│  RCTRL   │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ; :     │ LWR/'    │
-&kp RCTRL &hm LEFT_META A &hm LEFT_ALT S &hm LCTRL D &hm LEFT_SHIFT F &kp G  &kp H  &hm RIGHT_SHIFT J &hm RCTRL K &hm RIGHT_ALT L &hm RGUI SEMI  &lt 1 SQT
+    &kp RCTRL  &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp AMPS  &lt 1 SQT
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //│  LSHFT   │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │  . >     │  / ?     │ RSE/ESC  │
     &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &lt 2 ESC
@@ -196,8 +160,8 @@
 //|  TAB     |  !       |  @       |  {       |  }       | "|"      |   |  +       |  7       |  8       |  9       |  *       |  Del     |
     &kp TAB    &kp EXCL   &kp AT     &kp LBRC  &kp RBRC    &kp PIPE      &kp PLUS    &kp N7     &kp N8     &kp N9     &kp STAR   &kp DEL
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//| SOFT OFF |  #       |  $       |  (       |  )       |  `       |   |  -       |  4       |  5       |  6       |  &       |  Ins     |
-&soft_off  &hm LEFT_META HASH  &hm LEFT_ALT DOLLAR  &hm LCTRL LPAR  &hm LEFT_SHIFT RPAR &kp GRAVE &kp MINUS  &hm RIGHT_SHIFT N4 &hm RCTRL N5 &hm RIGHT_ALT N6 &hm RGUI AMPERSAND &kp INS
+//| EP_TOG   |  #       |  $       |  (       |  )       |  `       |   |  -       |  4       |  5       |  6       |  :       |  Ins     |
+&ext_power EP_TOG &kp HASH &kp DOLLAR &kp LPAR  &kp RPAR   &kp GRAVE      &kp MINUS  &kp N4     &kp N5     &kp N6     &kp COLON  &kp INS
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //|  CAPS    |  %       |  ^       |  [       |  ]       |  ~       |   |  =       |  1       |  2       |  3       |  \       |  ESC     |
     &kp CAPS   &kp PERCENT &kp CARET   &kp LBKT  &kp RBKT  &kp TILDE      &kp EQUAL  &kp N1     &kp N2     &kp N3     &kp BSLH   &kp ESC
@@ -215,10 +179,10 @@
     &trans      &kp F1    &kp F2     &kp F3     &kp F4     &email         &trans     &kp HOME    &kp UP    &kp END    &kp PG_UP   &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //|          |  F5      |  F6      |  F7      |  F8      | ^V/^C    |   |          |   ◄      |  ▼       |  ►       | PG_DN    | EP_TOG   |
-&trans &hm LEFT_META F5 &hm LEFT_ALT F6 &hm LCTRL F7 &hm LEFT_SHIFT F8  &hm LC(V) LC(C) &trans &hm RIGHT_SHIFT LEFT &hm RCTRL DOWN &hm RIGHT_ALT RIGHT &hm RGUI PAGE_DOWN  &ext_power EP_TOG
+&trans &hm LEFT_META F5 &hm LEFT_ALT F6 &hm LCTRL F7 &hm LEFT_SHIFT F8  &hm LC(V) LC(C)    &trans     &kp LEFT     &kp DOWN     &kp RIGHT       &kp PAGE_DOWN  &ext_power EP_TOG
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//|          |  F9      |  F10     |  F11     |  F12     |  PSCRN   |   |  ^R      |  ^S      |  ^ T     |  ^⇧T     |          |          |
-    &trans      &kp F9     &kp F10    &kp F11    &kp F12    &kp PSCRN     &kp LC(R)  &kp LC(S)  &kp LC(TAB) &kp LC(RS(TAB)) &trans  &trans
+//|   |  F9  |  F10 | F11 | F12  | PSCRN |   | ^R |  ^S  | ^ T  | ^⇧T |       |        |
+&trans  &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN          &kp LC(R)  &kp LC(S)    &kp LC(TAB)  &kp LC(RS(TAB)) &trans         &trans
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
 //                                 |          |          |          |   |          |          |          |
                                      &trans     &trans     &trans         &trans     &trans     &trans
@@ -234,7 +198,7 @@
   &trans  &trans &trans     &kp C_PREVIOUS &kp C_NEXT &kp C_PLAY_PAUSE  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans  &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //|          |          |          |          |          |          |   | Bri-     | Bri+     |  ^ T     | ^⇧ T     |          |          |
-    &trans     &trans     &trans     &trans     &trans    S &trans  &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp LC(T) &kp LC(LS(T)) &trans  &trans
+    &trans     &trans     &trans     &trans     &trans     &trans  &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp LC(T) &kp LC(LS(T)) &trans  &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //| BT CLR   | BT1      | BT2      | BT3      | BT4      | BT5      |   | alt-L    | alt-R    | ^Tab     | ^⇧Tab    |          |          |
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4  &kp LA(LEFT) &kp LA(RIGHT) &kp LC(TAB) &kp LC(RS(TAB)) &trans  &trans
