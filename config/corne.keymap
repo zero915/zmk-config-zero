@@ -80,46 +80,6 @@
             bindings = <&bt BT_NXT>;
             key-positions = <5 38 1>;
         };
-        
-        left_bkt {
-            bindings = <&kp LBKT>;
-            key-positions = <3 2>;
-        };
-
-        right_bkt {
-            bindings = <&kp RBKT>;
-            key-positions = <6 7>;
-        };
-
-        left_par {
-            bindings = <&kp LPAR>;
-            key-positions = <12 13>;
-        };
-
-        right_par {
-            bindings = <&kp RPAR>;
-            key-positions = <16 17>;
-        };
-
-        left_prc {
-            bindings = <&kp LBRC>;
-            key-positions = <22 23>;
-        };
-
-        right_prc {
-            bindings = <&kp RBRC>;
-            key-positions = <27 26>;
-        };
-
-        blsh {
-            bindings = <&kp BSLH>;
-            key-positions = <4 5>;
-        };
-
-        pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <14 15>;
-        };
 
         under {
             bindings = <&kp UNDER>;
