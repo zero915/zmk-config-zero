@@ -14,6 +14,60 @@
 };
 
 / {
+    behaviors {
+        tp: tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_PREFERRED";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <125>;
+            quick-tap-ms = <200>;
+        };
+
+        shifthr: shifthr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFTHR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <185>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <185>;
+        };
+
+        weak: weak {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WEAK";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <230>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <125>;
+            quick-tap-ms = <230>;
+        };
+
+        backspace: backspace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BACKSPACE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -98,60 +152,6 @@
         };
     };
 
-    behaviors {
-        tp: tap_preferred {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TAP_PREFERRED";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            require-prior-idle-ms = <125>;
-            quick-tap-ms = <200>;
-        };
-
-        shifthr: shifthr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SHIFTHR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <185>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <185>;
-        };
-
-        weak: weak {
-            compatible = "zmk,behavior-hold-tap";
-            label = "WEAK";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <230>;
-            flavor = "tap-preferred";
-            require-prior-idle-ms = <125>;
-            quick-tap-ms = <230>;
-        };
-
-        backspace: backspace {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BACKSPACE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
-        };
-    };
-
     macros {
         save: save {
             compatible = "zmk,behavior-macro";
@@ -176,10 +176,10 @@
             bindings = <
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
 //│  TAB     │  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │ BKSPC    │
-    &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O       &kp P     &kp BSPC
+    &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O       &kp P     &backspace
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //│  RCTRL   │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ; :     │ LWR/'    │
-&kp RCTRL &hm LEFT_META A &hm LEFT_ALT S &hm LCTRL D  &hm LEFT_SHIFT F  &kp G  &kp H  &hm RIGHT_SHIFT J &hm RCTRL K &hm RIGHT_ALT L &hm RIGHT_META SEMI  &lt 1 SQT
+&kp RCTRL &hm LEFT_META A &hm LEFT_ALT S &hm LCTRL D &hm LEFT_SHIFT F &kp G  &kp H  &hm RIGHT_SHIFT J &hm RCTRL K &hm RIGHT_ALT L &hm RIGHT_META SEMI  &lt 1 SQT
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //│  LSHFT   │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │  . >     │  / ?     │ RSE/ESC  │
     &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &lt 2 ESC
