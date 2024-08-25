@@ -246,7 +246,7 @@
     &trans     &trans     &trans     &trans     &trans     &trans  &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp LC(T) &kp LC(LS(T)) &trans  &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //| BT CLR   | BT1      | BT2      | BT3      | BT4      | BT5      |   | alt-L    | alt-R    | ^Tab     | ^ ⇧ Tab  |          |          |
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4  &kp LA(LEFT) &kp LA(RIGHT) &kp LC(TAB) &kp LC(RS(TAB)) &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4  &kp LA(LEFT) &kp LA(RIGHT) &kp LC(RS(TAB)) &kp LC(TAB) &trans  &trans
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
 //                                 |          |          |          |   |          |          |          |
                                      &trans     &trans     &trans         &trans     &trans     &trans
