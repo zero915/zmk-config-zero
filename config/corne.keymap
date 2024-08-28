@@ -76,7 +76,7 @@
             key-positions = <31 32>;
         };
 
-        under {
+        underline {
             bindings = <&kp UNDER>;
             key-positions = <28 31>;
         };
@@ -91,17 +91,17 @@
             key-positions = <0 38 5>;
         };
 
-        Space {
+        space {
             bindings = <&kp SPACE>;
             key-positions = <30 31>;
         };
 
-        Enter {
+        enter {
             bindings = <&kp ENTER>;
             key-positions = <17 16>;
         };
 
-        Capslock {
+        caps {
             bindings = <&kp CAPS>;
             key-positions = <5 6>;
         };
@@ -149,7 +149,7 @@
             key-positions = <8 9>;
         };
 
-        blsh {
+        backslsh {
             bindings = <&kp BSLH>;
             key-positions = <10 9>;
         };
@@ -159,32 +159,32 @@
             key-positions = <1 2>;
         };
 
-        Undo {
+        undo {
             bindings = <&kp LC(Z)>;
             key-positions = <25 24>;
         };
 
-        Cut {
+        cut {
             bindings = <&kp LC(X)>;
             key-positions = <26 27>;
         };
 
-        Copy {
+        copy {
             bindings = <&kp LC(C)>;
             key-positions = <27 28>;
         };
 
-        Paste {
+        paste {
             bindings = <&kp LC(V)>;
             key-positions = <28 29>;
         };
 
-        Redo {
+        redo {
             bindings = <&kp LC(Y)>;
             key-positions = <25 26>;
         };
 
-        Enter {
+        return {
             bindings = <&kp RET>;
             key-positions = <21 22>;
         };
