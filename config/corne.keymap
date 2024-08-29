@@ -37,7 +37,7 @@
             quick-tap-ms = <200>;
         };
 
-        shifthr: shifthr {
+        sh: shifthr {
             compatible = "zmk,behavior-hold-tap";
             label = "SHIFTHR";
             bindings = <&kp>, <&kp>;
@@ -48,7 +48,7 @@
             quick-tap-ms = <185>;
         };
 
-        weak: weak {
+        wk: weak {
             compatible = "zmk,behavior-hold-tap";
             label = "WEAK";
             bindings = <&kp>, <&kp>;
@@ -229,10 +229,10 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp Q         &kp W             &kp E             &kp R                  &kp T        &kp Y    &kp U                   &kp I             &kp O              &kp P                 &kp BSPC
-&kp RCTRL  &weak LGUI A  &weak LEFT_ALT S  &shifthr LCTRL D  &shifthr LEFT_SHIFT F  &kp G        &kp H    &shifthr RIGHT_SHIFT J  &shifthr RCTRL K  &weak RIGHT_ALT L  &weak RIGHT_GUI SEMI  &lt 1 SQT
-&kp LSHFT  &kp Z         &kp X             &kp C             &kp V                  &kp B        &kp N    &kp M                   &kp COMMA         &kp DOT            &kp FSLH              &lt 2 ESC
-                                           &kp LGUI          &mo 1                  &kp SPACE    &kp RET  &mo 2                   &kp RALT
+&kp TAB    &kp Q         &kp W             &kp E             &kp R                  &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &backspace
+&kp RCTRL  &wk LGUI A    &wk LEFT_ALT S    &sh LCTRL D       &sh LEFT_SHIFT F       &kp G        &kp H    &sh RIGHT_SHIFT J  &sh RCTRL K  &wk RIGHT_ALT L  &kp SEMI  &lt 1 SQT
+&kp LSHFT  &kp Z         &kp X             &kp C             &kp V                  &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &lt 2 ESC
+                                           &kp LGUI          &mo 1                  &kp SPACE    &kp RET  &mo 2              &kp RALT
             >;
         };
 
@@ -248,10 +248,10 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp EXCL            &kp AT               &kp LBRC        &kp RBRC             &kp PIPE     &kp PLUS   &kp N7              &kp N8        &kp N9            &kp STAR            &kp DEL
-&soft_off  &hm LEFT_META HASH  &hm LEFT_ALT DOLLAR  &hm LCTRL LPAR  &hm LEFT_SHIFT RPAR  &kp GRAVE    &kp MINUS  &hm RIGHT_SHIFT N4  &hm RCTRL N5  &hm RIGHT_ALT N6  &hm RIGHT_GUI AMPS  &kp INS
-&kp CAPS   &kp PERCENT         &kp CARET            &kp LBKT        &kp RBKT             &kp TILDE    &kp EQUAL  &kp N1              &kp N2        &kp N3            &kp BSLH            &kp ESC
-                                                    &kp LGUI        &trans               &kp SPACE    &kp RET    &kp DOT             &kp N0
+&kp TAB    &kp EXCL            &kp AT               &kp LBRC        &kp RBRC             &kp PIPE     &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR  &kp DEL
+&soft_off  &wk LEFT_META HASH  &wk LEFT_ALT DOLLAR  &sh LCTRL LPAR  &sh LEFT_SHIFT RPAR  &kp GRAVE    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp AMPS  &kp INS
+&kp CAPS   &kp PERCENT         &kp CARET            &kp LBKT        &kp RBKT             &kp TILDE    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp BSLH  &kp ESC
+                                                    &kp LGUI        &trans               &kp SPACE    &kp RET    &kp DOT &kp N0
             >;
         };
 
@@ -259,7 +259,7 @@
             //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
             //|          |  F1      |  F2      |  F3      |  F4      | email    |   |          |  HOME    |  ▲       |  END     |  PG_UP   |          |
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //|          |  F5      |  F6      |  F7      |  F8      | ^V/^C    |   |          |   ◄      |  ▼       |  ►       |  PG_DN   |  EP_TOG  |
+            //|          |  F5      |  F6      |  F7      |  F8      | gitstatu |   |          |   ◄      |  ▼       |  ►       |  PG_DN   |  EP_TOG  |
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
             //|          |  F9      |  F10     |  F11     |  F12     | PSCRN    |   |  ^R      |  ^S      |  ^O      |  ^C      |  ^V      |  ^X      |
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
@@ -267,10 +267,10 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&trans  &kp F1            &kp F2           &kp F3        &kp F4             &email             &trans     &kp HOME              &kp UP          &kp END              &kp PG_UP                &trans
-&trans  &hm LEFT_META F5  &hm LEFT_ALT F6  &hm LCTRL F7  &hm LEFT_SHIFT F8  &hm LC(V) LC(C)    &trans     &hm RIGHT_SHIFT LEFT  &hm RCTRL DOWN  &hm RIGHT_ALT RIGHT  &hm RIGHT_GUI PAGE_DOWN  &ext_power EP_TOG
-&trans  &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN          &kp LC(R)  &kp LC(S)             &kp LC(O)       &kp LC(C)            &kp LC(V)                &kp LC(X)
-                                           &kp LGUI      &trans             &trans             &trans     &mo 2                 &kp RALT
+&trans  &kp F1            &kp F2           &kp F3        &kp F4             &email         &trans     &kp HOME   &kp UP     &kp END    &kp PG_UP      &trans
+&trans  &wk LEFT_META F5  &wk LEFT_ALT F6  &sh LCTRL F7  &sh LEFT_SHIFT F8  &git_status    &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp PAGE_DOWN  &ext_power EP_TOG
+&trans  &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN      &kp LC(R)  &kp LC(S)  &kp LC(O)  &kp LC(C)  &kp LC(V)      &kp LC(X)
+                                           &kp LGUI      &trans             &trans         &trans     &mo 2      &kp RALT
             >;
         };
 
