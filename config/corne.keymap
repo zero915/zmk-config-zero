@@ -59,13 +59,6 @@
             require-prior-idle-ms = <125>;
             quick-tap-ms = <230>;
         };
-
-        backspace: backspace {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BACKSPACE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
-        };
     };
 
     combos {
@@ -219,17 +212,17 @@
 
         default_layer {
             //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-            //│  TAB     │  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │ BKSPC    │
+            //│  TAB     |    Q   [esc]  W   [ { ]   E  [ [ ]  R   [ ( ]   T    │   │   Y    [ ) ]  U   [ ] ]  I   [ } ] O    [ │ ]  P     │ BKSPC    │
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│  RCTRL   │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ; :     │ LWR/'    │
+            //│  SHIFT   │    A     │    S     │    D     │   F    [ ↵ ]   G    │   │   H      │    J     │  K       │  L     [ ↵ ]  ; :   │ LWR/'    │
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│  LSHFT   │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │  . >     │  / ?     │ RSE/ESC  │
+            //│  CTRL  [redo] Z  [undo]  X   [cut]  C  [copy] V  [paste]   B    │   │   N   [space] M     │ , <      │  . >   [ \ ]  / ?   │ RSE/ESC  │
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 │  WIN     │  LWR     │  SPACE   │   │  ENTER   │  RSE     │  RALT    │
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp Q         &kp W             &kp E             &kp R                  &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &backspace
+&kp TAB    &kp Q         &kp W             &kp E             &kp R                  &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &kp BKSPC
 &kp RCTRL  &wk LGUI A    &wk LEFT_ALT S    &sh LCTRL D       &sh LEFT_SHIFT F       &kp G        &kp H    &sh RIGHT_SHIFT J  &sh RCTRL K  &wk RIGHT_ALT L  &kp SEMI  &lt 1 SQT
 &kp LSHFT  &kp Z         &kp X             &kp C             &kp V                  &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &lt 2 ESC
                                            &kp LGUI          &mo 1                  &kp SPACE    &kp RET  &mo 2              &kp RALT
@@ -242,7 +235,7 @@
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
             //| Soft OFF |  #       |  $       |  (       |  )       |  `       |   |  -       |  4       |  5       |  6       |  &       |  Ins     |
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //|  CAPS    |  %       |  ^       |  [       |  ]       |  ~       |   |  =       |  1       |  2       |  3       |  \       |  ESC     |
+            //|          |  %       |  ^       |  [       |  ]       |  ~       |   |  =       |  1       |  2       |  3       |  \       |  ESC     |
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 |  WIN     |          |  SPACE   │   │  ENTER   │  .       |  0       |
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
@@ -250,7 +243,7 @@
             bindings = <
 &kp TAB    &kp EXCL            &kp AT               &kp LBRC        &kp RBRC             &kp PIPE     &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR  &kp DEL
 &soft_off  &wk LEFT_META HASH  &wk LEFT_ALT DOLLAR  &sh LCTRL LPAR  &sh LEFT_SHIFT RPAR  &kp GRAVE    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp AMPS  &kp INS
-&kp CAPS   &kp PERCENT         &kp CARET            &kp LBKT        &kp RBKT             &kp TILDE    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp BSLH  &kp ESC
+&trans     &kp PERCENT         &kp CARET            &kp LBKT        &kp RBKT             &kp TILDE    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp BSLH  &kp ESC
                                                     &kp LGUI        &trans               &kp SPACE    &kp RET    &kp DOT &kp N0
             >;
         };
