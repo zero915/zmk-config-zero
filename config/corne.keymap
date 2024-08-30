@@ -212,7 +212,7 @@
 
         default_layer {
             //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-            //│  TAB     |    Q   [esc]  W   [ { ]   E  [ [ ]  R   [ ( ]   T    │   │   Y    [ ) ]  U   [ ] ]  I   [ } ] O    [ │ ]  P     │ BKSPC    │
+            //│  TAB     |    Q   [esc]  W   [ { ]   E  [ [ ]  R   [ ( ]   T    │   │   Y    [ ) ]  U   [ ] ]  I   [ } ] O    [ │ ]  P     │ BSPC     │
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
             //│  SHIFT   │    A     │    S     │    D     │   F    [ ↵ ]   G    │   │   H      │    J     │  K       │  L     [ ↵ ]  ; :   │ LWR/'    │
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
@@ -222,7 +222,7 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp Q         &kp W             &kp E             &kp R                  &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &kp BKSPC
+&kp TAB    &kp Q         &kp W             &kp E             &kp R                  &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &kp BSPC
 &kp RCTRL  &wk LGUI A    &wk LEFT_ALT S    &sh LCTRL D       &sh LEFT_SHIFT F       &kp G        &kp H    &sh RIGHT_SHIFT J  &sh RCTRL K  &wk RIGHT_ALT L  &kp SEMI  &lt 1 SQT
 &kp LSHFT  &kp Z         &kp X             &kp C             &kp V                  &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &lt 2 ESC
                                            &kp LGUI          &mo 1                  &kp SPACE    &kp RET  &mo 2              &kp RALT
