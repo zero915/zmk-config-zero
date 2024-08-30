@@ -210,14 +210,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp L &kp L>;
-            label = "GIT_STATUS";
+            label = "GIT_PULL";
         };
 
         git_diff: git_diff {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp I &kp T &kp SPACE &kp D &kp I &kp F &kp F>;
-            label = "GIT_STATUS";
+            label = "GIT_DIFF";
         };
     };
 
