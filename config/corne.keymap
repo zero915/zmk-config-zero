@@ -109,7 +109,7 @@
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <0 1>;
+            key-positions = <1 2>;
         };
 
         left_bkt {
@@ -144,12 +144,12 @@
 
         backslsh {
             bindings = <&kp BSLH>;
-            key-positions = <10 9>;
+            key-positions = <33 34>;
         };
 
         pipe {
             bindings = <&kp PIPE>;
-            key-positions = <1 2>;
+            key-positions = <9 10>;
         };
 
         undo {
@@ -222,10 +222,10 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp Q         &kp W             &kp E             &kp R                  &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &kp BSPC
-&kp LSHFT  &wk LGUI A    &wk LEFT_ALT S    &sh LCTRL D       &sh LEFT_SHIFT F       &kp G        &kp H    &sh RIGHT_SHIFT J  &sh RCTRL K  &wk RIGHT_ALT L  &kp SEMI  &lt 1 SQT
-&kp RCTRL  &kp Z         &kp X             &kp C             &kp V                  &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &lt 2 ESC
-                                           &kp LGUI          &mo 1                  &kp SPACE    &kp RET  &mo 2              &kp RALT
+&kp TAB    &kp Q       &kp W           &kp E        &kp R             &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &kp BSPC
+&kp LSHFT  &wk LGUI A  &wk LEFT_ALT S  &sh LCTRL D  &sh LEFT_SHIFT F  &kp G        &kp H    &sh RIGHT_SHIFT J  &sh RCTRL K  &wk RIGHT_ALT L  &kp SEMI  &lt 1 SQT
+&kp LCTRL  &kp Z       &kp X           &kp C        &kp V             &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &lt 2 ESC
+                                       &kp LGUI     &mo 1             &kp SPACE    &kp RET  &mo 2              &kp RALT
             >;
         };
 
@@ -241,10 +241,10 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp EXCL            &kp AT               &kp LBRC        &kp RBRC             &kp PIPE     &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR  &kp DEL
-&soft_off  &wk LEFT_META HASH  &wk LEFT_ALT DOLLAR  &sh LCTRL LPAR  &sh LEFT_SHIFT RPAR  &kp GRAVE    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp AMPS  &kp INS
-&trans     &kp PERCENT         &kp CARET            &kp LBKT        &kp RBKT             &kp TILDE    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp BSLH  &kp ESC
-                                                    &kp LGUI        &trans               &kp SPACE    &kp RET    &kp DOT &kp N0
+&kp TAB    &kp EXCL            &kp AT               &kp LBRC        &kp RBRC             &kp PIPE     &kp PLUS   &kp N7   &kp N8  &kp N9  &kp STAR  &kp DEL
+&soft_off  &wk LEFT_META HASH  &wk LEFT_ALT DOLLAR  &sh LCTRL LPAR  &sh LEFT_SHIFT RPAR  &kp GRAVE    &kp MINUS  &kp N4   &kp N5  &kp N6  &kp AMPS  &kp INS
+&trans     &kp PERCENT         &kp CARET            &kp LBKT        &kp RBKT             &kp TILDE    &kp EQUAL  &kp N1   &kp N2  &kp N3  &kp BSLH  &kp ESC
+                                                    &kp LGUI        &trans               &kp SPACE    &kp RET    &kp DOT  &kp N0
             >;
         };
 
