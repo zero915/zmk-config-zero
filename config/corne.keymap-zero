@@ -6,7 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
 &soft_off {
@@ -37,7 +36,7 @@
             quick-tap-ms = <200>;
         };
 
-        shifthr: shifthr {
+        sh: shifthr {
             compatible = "zmk,behavior-hold-tap";
             label = "SHIFTHR";
             bindings = <&kp>, <&kp>;
@@ -48,7 +47,7 @@
             quick-tap-ms = <185>;
         };
 
-        weak: weak {
+        wk: weak {
             compatible = "zmk,behavior-hold-tap";
             label = "WEAK";
             bindings = <&kp>, <&kp>;
@@ -58,13 +57,6 @@
             flavor = "tap-preferred";
             require-prior-idle-ms = <125>;
             quick-tap-ms = <230>;
-        };
-
-        backspace: backspace {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BACKSPACE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
         };
     };
 
@@ -76,7 +68,7 @@
             key-positions = <31 32>;
         };
 
-        under {
+        underline {
             bindings = <&kp UNDER>;
             key-positions = <28 31>;
         };
@@ -91,17 +83,17 @@
             key-positions = <0 38 5>;
         };
 
-        Space {
+        space {
             bindings = <&kp SPACE>;
-            key-positions = <29 28>;
+            key-positions = <30 31>;
         };
 
-        Enter {
+        enter {
             bindings = <&kp ENTER>;
             key-positions = <17 16>;
         };
 
-        Capslock {
+        caps {
             bindings = <&kp CAPS>;
             key-positions = <5 6>;
         };
@@ -116,67 +108,87 @@
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <0 1>;
+            key-positions = <1 2>;
         };
 
         left_bkt {
             bindings = <&kp LBKT>;
-            key-positions = <3 2>;
+            key-positions = <3 4>;
         };
 
         right_bkt {
             bindings = <&kp RBKT>;
-            key-positions = <8 9>;
+            key-positions = <8 7>;
         };
 
         left_par {
             bindings = <&kp LPAR>;
-            key-positions = <3 4>;
+            key-positions = <4 5>;
         };
 
         right_par {
             bindings = <&kp RPAR>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
         };
 
         left_prc {
             bindings = <&kp LBRC>;
-            key-positions = <14 15>;
+            key-positions = <2 3>;
         };
 
         right_prc {
             bindings = <&kp RBRC>;
-            key-positions = <20 21>;
+            key-positions = <8 9>;
         };
 
-        blsh {
+        backslsh {
             bindings = <&kp BSLH>;
-            key-positions = <10 9>;
+            key-positions = <33 34>;
         };
 
         pipe {
             bindings = <&kp PIPE>;
-            key-positions = <1 2>;
+            key-positions = <9 10>;
         };
 
-        Undo {
+        undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <25 24>;
+            key-positions = <26 25>;
         };
 
-        Cut {
+        cut {
             bindings = <&kp LC(X)>;
-            key-positions = <25 26>;
-        };
-
-        Copy {
-            bindings = <&kp LC(C)>;
             key-positions = <26 27>;
         };
 
-        Paste {
-            bindings = <&kp LC(V)>;
+        copy {
+            bindings = <&kp LC(C)>;
             key-positions = <27 28>;
+        };
+
+        paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <28 29>;
+        };
+
+        redo {
+            bindings = <&kp LC(Y)>;
+            key-positions = <24 25>;
+        };
+
+        return {
+            bindings = <&kp RET>;
+            key-positions = <21 22>;
+        };
+
+        select_all {
+            bindings = <&kp LC(A)>;
+            key-positions = <13 14>;
+        };
+
+        save {
+            bindings = <&kp LC(S)>;
+            key-positions = <14 15>;
         };
     };
 
@@ -202,76 +214,102 @@
             bindings = <&kp G &kp I &kp T &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S>;
             label = "GIT_STATUS";
         };
+
+        git_pull: git_pull {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp L &kp L>;
+            label = "GIT_PULL";
+        };
+
+        git_diff: git_diff {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp D &kp I &kp F &kp F>;
+            label = "GIT_DIFF";
+        };
+
+        git_commit: git_commit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE &kp MINUS &kp M &kp SPACE &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+            label = "GIT_COMMIT";
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-//│  TAB     │  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │ BKSPC    │
-//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//│  RCTRL   │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ; :     │ LWR/'    │
-//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//│  LSHFT   │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │  . >     │  / ?     │ RSE/ESC  │
-//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 │  WIN     │  LWR     │  SPACE   │   │  ENTER   │  RSE     │  RALT    │
-//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+            //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+            //│  TAB     |    Q   [esc]  W   [ { ]   E  [ [ ]  R   [ ( ]   T    │   │   Y    [ ) ]  U   [ ] ]  I   [ } ] O    [ │ ]  P     │ BSPC     │
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //│  SHIFT   │    A     │    S     │    D     │   F    [ ↵ ]   G    │   │   H      │    J     │    K     │   L    [ ↵ ]  ; :   │ LWR/'    │
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //│  CTRL  [redo] Z  [undo]  X   [cut]  C  [copy] V  [paste]   B    │   │   N   [space] M     │  , <     │  . >   [ \ ]  / ?   │ RSE/ESC  │
+            //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+            //                                 │  WIN     │  LWR     │  SPACE   │   │  ENTER   │  RSE     │  RALT    │
+            //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
             bindings = <
-&kp TAB    &kp Q         &kp W             &kp E             &kp R                  &kp T        &kp Y    &kp U                   &kp I             &kp O              &kp P               &kp BSPC
-&kp RCTRL  &weak LGUI A  &weak LEFT_ALT S  &shifthr LCTRL D  &shifthr LEFT_SHIFT F  &kp G        &kp H    &shifthr RIGHT_SHIFT J  &shifthr RCTRL K  &weak RIGHT_ALT L  &weak RIGHT_GUI SEMI  &lt 1 SQT
-&kp LSHFT  &kp Z         &kp X             &kp C             &kp V                  &kp B        &kp N    &kp M                   &kp COMMA         &kp DOT            &kp FSLH            &lt 2 ESC
+&kp TAB    &kp Q       &kp W           &kp E        &kp R             &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &kp BSPC
+&kp LSHFT  &wk LGUI A  &wk LEFT_ALT S  &sh LCTRL D  &sh LEFT_SHIFT F  &kp G        &kp H    &sh RIGHT_SHIFT J  &sh RCTRL K  &wk RIGHT_ALT L  &kp SEMI  &lt 1 SQT
+&kp LCTRL  &kp Z       &kp X           &kp C        &kp V             &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &lt 2 ESC
                                        &kp LGUI     &mo 1             &kp SPACE    &kp RET  &mo 2              &kp RALT
             >;
         };
 
         lower_layer {
-//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-//|  TAB     |  !       |  @       |  {       |  }       | "|"      |   |  +       |  7       |  8       |  9       |  *       |  Del     |
-//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//| Soft OFF |  #       |  $       |  (       |  )       |  `       |   |  -       |  4       |  5       |  6       |  &       |  Ins     |
-//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//|  CAPS    |  %       |  ^       |  [       |  ]       |  ~       |   |  =       |  1       |  2       |  3       |  \       |  ESC     |
-//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 |  WIN     |          |  SPACE   │   │  ENTER   │  .       |  0       |
-//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+            //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+            //|  TAB     |  !       |  @       |  {       |  }       | "|"      |   |  +       |  7       |  8       |  9       |  *       |  Del     |
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //|          |  #       |  $       |  (       |  )       |  `       |   |  -       |  4       |  5       |  6       |  &       |  Ins     |
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //| Soft OFF |  %       |  ^       |  [       |  ]       |  ~       |   |  =       |  1       |  2       |  3       |  \       |  ESC     |
+            //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+            //                                 |  WIN     |          |  SPACE   │   │  ENTER   │  .       |  0       |
+            //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
             bindings = <
-&kp TAB    &kp EXCL            &kp AT               &kp LBRC        &kp RBRC             &kp PIPE     &kp PLUS   &kp N7              &kp N8        &kp N9            &kp STAR            &kp DEL
-&soft_off  &hm LEFT_META HASH  &hm LEFT_ALT DOLLAR  &hm LCTRL LPAR  &hm LEFT_SHIFT RPAR  &kp GRAVE    &kp MINUS  &hm RIGHT_SHIFT N4  &hm RCTRL N5  &hm RIGHT_ALT N6  &hm RIGHT_GUI AMPS  &kp INS
-&kp CAPS   &kp PERCENT         &kp CARET            &kp LBKT        &kp RBKT             &kp TILDE    &kp EQUAL  &kp N1              &kp N2        &kp N3            &kp BSLH            &kp ESC
-                                                    &kp LGUI        &trans               &kp SPACE    &kp RET    &kp DOT             &kp N0
+&trans     &kp EXCL       &kp AT               &kp LBRC        &kp RBRC             &kp PIPE     &kp PLUS   &kp N7   &kp N8  &kp N9  &kp STAR  &kp DEL
+&trans     &wk LGUI HASH  &wk LEFT_ALT DOLLAR  &sh LCTRL LPAR  &sh LEFT_SHIFT RPAR  &kp GRAVE    &kp MINUS  &kp N4   &kp N5  &kp N6  &kp AMPS  &kp INS
+&soft_off  &kp PERCENT    &kp CARET            &kp LBKT        &kp RBKT             &kp TILDE    &kp EQUAL  &kp N1   &kp N2  &kp N3  &kp BSLH  &kp ESC
+                                               &kp LGUI        &trans               &kp SPACE    &kp RET    &kp DOT  &kp N0
             >;
         };
 
         raise_layer {
-//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-//|          |  F1      |  F2      |  F3      |  F4      | email    |   |          |  HOME    |  ▲       |  END     |  PG_UP   |          |
-//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//|          |  F5      |  F6      |  F7      |  F8      | ^V/^C    |   |          |   ◄      |  ▼       |  ►       |  PG_DN   |  EP_TOG  |
-//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//|          |  F9      |  F10     |  F11     |  F12     | PSCRN    |   |  ^R      |  ^S      |  ^O      |  ^C      |  ^V      |  ^X      |
-//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 |  WIN     |          |          |   |          |  RSE     |  RALT    |
-//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+            //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+            //|          |  F1      |  F2      |  F3      |  F4      | email    |   | g.pull   |  HOME    |  ▲       |  END     |  PG_UP   |          |
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //|          |  F5      |  F6      |  F7      |  F8      | ^V/^C    |   | g.status |   ◄      |  ▼       |  ►       |  PG_DN   |          |
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //|          |  F9      |  F10     |  F11     |  F12     | PSCRN    |   | g.diff   | g.commit |          |          |          |          |
+            //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+            //                                 |  WIN     |          |          |   |          |  RSE     |  RALT    |
+            //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
             bindings = <
-&trans  &kp F1            &kp F2           &kp F3        &kp F4             &email             &trans     &kp HOME              &kp UP          &kp END              &kp PG_UP                &trans
-&trans  &hm LEFT_META F5  &hm LEFT_ALT F6  &hm LCTRL F7  &hm LEFT_SHIFT F8  &hm LC(V) LC(C)    &trans     &hm RIGHT_SHIFT LEFT  &hm RCTRL DOWN  &hm RIGHT_ALT RIGHT  &hm RIGHT_GUI PAGE_DOWN  &ext_power EP_TOG
-&trans  &kp F9            &kp F10          &kp F11       &kp F12            &kp PSCRN          &kp LC(R)  &kp LC(S)             &kp LC(O)       &kp LC(C)            &kp LC(V)                &kp LC(X)
-                                           &kp LGUI      &trans             &trans             &trans     &mo 2                &kp RALT
+&trans  &kp F1  &kp F2   &kp F3    &kp F4   &email             &git_pull    &kp HOME     &kp UP    &kp END    &kp PG_UP      &trans
+&trans  &kp F5  &kp F6   &kp F7    &kp F8   &hm LC(V) LC(C)    &git_status  &kp LEFT     &kp DOWN  &kp RIGHT  &kp PAGE_DOWN  &trans
+&trans  &kp F9  &kp F10  &kp F11   &kp F12  &kp PSCRN          &git_diff    &git_commit  &trans    &trans     &trans         &trans
+                         &kp LGUI  &trans   &trans             &trans       &mo 2        &kp RALT
             >;
         };
 
         extended_layer {
             label = "EXT";
-//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-//|          |          |          |  Prv     |  Nxt     |  ►II     |   |  Vol-    |  Vol+    |  Mute    |          |          |          |
-//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//|          |          |          |          |          |          |   |  Bri-    |  Bri+    |  ^ T     |  ^⇧ T    |          |          |
-//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//| BT CLR   |  BT1     |  BT2     |  BT3     |  BT4     |  BT5     |   |  alt-L   |  alt-R   |  ^ Tab   |  ^⇧ Tab  |          |          |
-//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 |  WIN     |          |          |   |          |          |          |
-//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
+            //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+            //|          |          |          |  |◄◄     |  ►►|     |  ►||     |   |  Vol-    |  Vol+    |  Mute    |          |          |          |
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //|          |          |          |          |          |          |   |  Bri-    |  Bri+    |  ^ T     |  ^⇧ T    |          |          |
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //| BT CLR   |  BT1     |  BT2     |  BT3     |  BT4     |  BT5     |   |  alt-L   |  alt-R   |  ^⇧ Tab  |  ^ Tab   |          |          |
+            //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+            //                                 |  WIN     |          |          |   |          |          |          |
+            //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
             bindings = <
 &trans      &trans        &trans        &kp C_PREVIOUS  &kp C_NEXT    &kp C_PLAY_PAUSE    &kp C_VOL_DN          &kp C_VOL_UP          &kp C_MUTE       &trans         &trans  &trans
 &trans      &trans        &trans        &trans          &trans        &trans              &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp LC(T)        &kp LC(LS(T))  &trans  &trans
