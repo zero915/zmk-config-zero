@@ -14,8 +14,8 @@
 #define NUM   1
 #define FUNC  2
 #define EXT   3
-#define MOUSE 4
-#define APEX  5
+#define APEX  4
+//#define MOUSE 5
 
 &soft_off {
     hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
@@ -275,26 +275,6 @@
             >;
         };
 
-        mouse_layer {
-            label = "MOUSE";
-            //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-            //|          |          |  S ◄     |  ▲       |  S ►     |  S ▲     |   |          |          |          |          |          |          |
-            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |          |          |          |  S ▲     |          |          |
-            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //|          |          |          |          |          |          |   |          |          |  S ◄     |  S ▼     |  S ►     |          |
-            //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-            //                                 | L.Click  | R.Click  | M.Click  │   │  M 4     │  M 5     |          |
-            //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
-
-            bindings = <
-&none  &none  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP      &none      &none     &none           &none           &none            &none
-&none  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN    &none      &none     &none           &msc SCRL_UP    &none            &none
-&none  &none  &none           &none           &none            &none             &none      &none     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
-                              &mkp LCLK       &mkp RCLK        &mkp MCLK         &mkp MB4   &mkp MB5  &none
-            >;
-        };
-
         apex_layer {
             label = "APEX";
             //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -314,6 +294,27 @@
                           &kp C    &kp SPACE &kp M       &kp RET  &none    &kp T
             >;
         };
+
+//        mouse_layer {
+//            label = "MOUSE";
+            //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+            //|          |          |  S ◄     |  ▲       |  S ►     |  S ▲     |   |          |          |          |          |          |          |
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |          |          |          |  S ▲     |          |          |
+            //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //|          |          |          |          |          |          |   |          |          |  S ◄     |  S ▼     |  S ►     |          |
+            //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+            //                                 | L.Click  | R.Click  | M.Click  │   │  M 4     │  M 5     |          |
+            //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
+//            bindings = <
+//&none  &none  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP      &none      &none     &none           &none           &none            &none
+//&none  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN    &none      &none     &none           &msc SCRL_UP    &none            &none
+//&none  &none  &none           &none           &none            &none             &none      &none     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
+//                              &mkp LCLK       &mkp RCLK        &mkp MCLK         &mkp MB4   &mkp MB5  &none
+//            >;
+//        };
+
     };
 
     conditional_layers {
