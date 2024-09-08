@@ -292,10 +292,10 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp Q  &kp W   &kp E   &kp R      &kp N4    &kp N1   &kp N2  &kp N3  &kp N4  &none  &none
-&kp LSHFT  &kp A  &kp S   &kp D   &kp F      &kp G     &kp H    &kp X   &none   &none   &none  &none
-&kp LCTRL  &kp Z  &kp N1  &kp N2  &kp V      &kp B     &kp N    &none   &none   &none   &none  &to BASE
-                          &kp C   &kp SPACE  &kp M     &kp RET  &none   &kp T
+&kp TAB    &kp Q  &kp W   &kp E  &kp R      &kp N4    &kp N1   &kp N2  &kp N3  &kp N4  &none  &none
+&kp LSHFT  &kp A  &kp S   &kp D  &kp F      &kp G     &kp H    &kp X   &none   &none   &none  &none
+&kp LCTRL  &kp Z  &kp F1  &kp C  &kp V      &kp B     &kp N    &none   &none   &none   &none  &to BASE
+                          &kp C  &kp SPACE  &kp M     &kp RET  &none   &kp T
             >;
         };
 
