@@ -14,19 +14,19 @@
 #define FUNC  2
 #define EXT   3
 #define GAME  4
-#define MOUSE 5
+//#define MOUSE 5
 
 &soft_off {
     hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
 };
 
-&mmv {
-    time-to-max-speed-ms = <500>;
-};
-
-&mwh {
-    acceleration-exponent=<1>;
-};
+//&mmv {
+//    time-to-max-speed-ms = <500>;
+//};
+//
+//&mwh {
+//    acceleration-exponent=<1>;
+//};
 
 / {
     behaviors {
@@ -218,7 +218,7 @@
             bindings = <
 &kp TAB    &kp Q  &kp W           &kp E        &kp R             &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &kp BSPC
 &kp LSHFT  &kp A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G        &kp H    &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &kp SEMI  &lt NUM SQT
-&kp LCTRL  &kp Z  &kp X           &kp C        &kp V             &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &lt MOUSE ESC
+&kp LCTRL  &kp Z  &kp X           &kp C        &kp V             &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &kp ESC
                                   &kp LGUI     &mo NUM           &kp SPACE    &kp RET  &mo FUNC           &kp RALT
             >;
         };
@@ -307,24 +307,24 @@
             >;
         };
 
-        mouse_layer {
-            label = "MOUSE";
-        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //|          |          |  S ◄     |  ▲       |  S ►     |  S ▲     |   |          |          |          |          |          |          |
-        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |          |          |          |  S ▲     |          |          |
-        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|          |          |          |          |          |          |   |          |          |  S ◄     |  S ▼     |  S ►     |          |
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 | L.Click  | R.Click  | M.Click  │   │  M 4     │  M 5     |          |
-        //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
-            bindings = <
-&none  &none  &mwh SCROLL_LEFT &mmv MOVE_UP    &mwh SCROLL_RIGHT &mwh SCROLL_UP    &none      &none     &none            &none             &none             &none
-&none  &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_DOWN  &none      &none     &none            &mwh SCROLL_UP    &none             &none
-&none  &none  &none            &none           &none             &none             &none      &none     &mwh SCROLL_LEFT &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT &none
-                               &mkp LCLK       &mkp RCLK         &mkp MCLK         &mkp MB4   &mkp MB5  &none
-            >;
-        };
+//        mouse_layer {
+//            label = "MOUSE";
+//        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+//        //|          |          |  S ◄     |  ▲       |  S ►     |  S ▲     |   |          |          |          |          |          |          |
+//        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+//        //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |          |          |          |  S ▲     |          |          |
+//        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+//        //|          |          |          |          |          |          |   |          |          |  S ◄     |  S ▼     |  S ►     |          |
+//        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+//        //                                 | L.Click  | R.Click  | M.Click  │   │  M 4     │  M 5     |          |
+//        //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+//            bindings = <
+//&none  &none  &mwh SCROLL_LEFT &mmv MOVE_UP    &mwh SCROLL_RIGHT &mwh SCROLL_UP    &none      &none     &none            &none             &none             &none
+//&none  &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_DOWN  &none      &none     &none            &mwh SCROLL_UP    &none             &none
+//&none  &none  &none            &none           &none             &none             &none      &none     &mwh SCROLL_LEFT &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT &none
+//                               &mkp LCLK       &mkp RCLK         &mkp MCLK         &mkp MB4   &mkp MB5  &none
+//            >;
+//        };
     };
 
     conditional_layers {
