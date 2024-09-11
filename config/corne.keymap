@@ -184,6 +184,20 @@
             label = "GIT_PULL";
         };
 
+        git_pull_many: git_pull_many {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(R) &kp G &kp I &kp T &kp SPACE &kp MINUS &kp LS(C) &kp SPACE &kp LBRC &kp RBRC &kp SPACE &kp P &kp U &kp L &kp L &kp SQT>;
+            label = "GIT_PULL_MANY";
+        };
+
+        git_push: git_push {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp S &kp H>;
+            label = "GIT_PUSH";
+        };
+
         git_diff: git_diff {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -252,15 +266,15 @@
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
             //|          |  F5      |  F6      |  F7      |  F8      |          |   | g.status |   ◄      |  ▼       |  ►       |  PG_DN   |          |
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //|          |  F9      |  F10     |  F11     |  F12     | PSCRN    |   | g.diff   | g.commit |          |          |          |          |
+            //|          |  F9      |  F10     |  F11     |  F12     | PSCRN    |   | g.diff   | g.commit | g.pull_m |          |  g.push  |          |
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 |  WIN     |          |          |   |          |  RSE     |  RALT    |
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3    &kp F4   &email       &git_pull    &kp HOME     &kp UP    &kp END    &kp PG_UP      &trans
-&trans  &kp F5  &kp F6   &kp F7    &kp F8   &trans       &git_status  &kp LEFT     &kp DOWN  &kp RIGHT  &kp PAGE_DOWN  &trans
-&trans  &kp F9  &kp F10  &kp F11   &kp F12  &kp PSCRN    &git_diff    &git_commit  &trans    &trans     &trans         &trans
+&trans  &kp F1  &kp F2   &kp F3    &kp F4   &email       &git_pull    &kp HOME     &kp UP         &kp END    &kp PG_UP      &trans
+&trans  &kp F5  &kp F6   &kp F7    &kp F8   &trans       &git_status  &kp LEFT     &kp DOWN       &kp RIGHT  &kp PAGE_DOWN  &trans
+&trans  &kp F9  &kp F10  &kp F11   &kp F12  &kp PSCRN    &git_diff    &git_commit  &git_pull_many &trans     &git_push      &trans
                          &kp LGUI  &trans   &trans       &trans       &mo FUNC     &kp RALT
             >;
         };
@@ -310,19 +324,19 @@
 //        mouse_layer {
 //            label = "MOUSE";
 //        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-//        //|          |          |  S ◄     |  ▲       |  S ►     |  S ▲     |   |          |          |          |          |          |          |
+//        //|          |          | L.Click  |  ▲       | R.Click  |  S ▲     |   |          |          |          |          |          |          |
 //        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //        //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |          |          |          |  S ▲     |          |          |
 //        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//        //|          |          |          |          |          |          |   |          |          |  S ◄     |  S ▼     |  S ►     |          |
+//        //|          |          |  S ◄     |          |  S ►     |          |   |  M.4     |  M.5     |  S ◄     |  S ▼     |  S ►     |          |
 //        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//        //                                 | L.Click  | R.Click  | M.Click  │   │  M 4     │  M 5     |          |
+//        //                                 | L.Click  | R.Click  | M.Click  │   │ L.Click  | R.Click  | M.Click  |
 //        //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 //            bindings = <
-//&none  &none  &mwh SCROLL_LEFT &mmv MOVE_UP    &mwh SCROLL_RIGHT &mwh SCROLL_UP    &none      &none     &none            &none             &none             &none
+//&none  &none  &mkp LCLK        &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_UP    &none      &none     &none            &none             &none             &none
 //&none  &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_DOWN  &none      &none     &none            &mwh SCROLL_UP    &none             &none
-//&none  &none  &none            &none           &none             &none             &none      &none     &mwh SCROLL_LEFT &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT &none
-//                               &mkp LCLK       &mkp RCLK         &mkp MCLK         &mkp MB4   &mkp MB5  &none
+//&none  &none  &mwh SCROLL_LEFT &none           &mwh SCROLL_RIGHT &none             &mkp MB4   &mkp MB5  &mwh SCROLL_LEFT &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT &none
+//                               &mkp LCLK       &mkp RCLK         &mkp MCLK         &mkp LCLK  &mkp RCLK &mkp MCLK
 //            >;
 //        };
     };
