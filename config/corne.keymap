@@ -205,6 +205,13 @@
             label = "GIT_DIFF";
         };
 
+        git_checkout: git_checkout {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp C &kp H &kp E &kp C &kp K &kp O &kp U &kp T &kp SPACE>;
+            label = "GIT_CHECKOUT";
+        };
+
         git_commit: git_commit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
