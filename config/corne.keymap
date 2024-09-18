@@ -234,31 +234,19 @@
             label = "BASE";
 
             //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-            //│  TAB     |    Q   [esc]  W   [ { ]   E  [ [ ]  R [reload]  T    │   │   Y    [ ) ]  U   [ ] ]  I   [ } ] O    [ │ ]  P     │ BSPC     │
+            //│  TAB     |    Q   [esc]  W     │     E    │    R [reload]  T    │   │   Y    [ - ]  U   [ _ ]  I     │   O      │    P     │ BSPC     │
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│  SHIFT   │    A   [all]  S   [save]  D    │    F    [ ↵ ]  G    │   │   H      │    J     │  K       │  L     [ ↵ ]  ; :   │ LWR/'    │
+            //│  SHIFT   │    A   [all]  S   [save]  D    │    F    [ ↵ ]  G    │   │   H   [space]  J    │  K       │  L     [ ↵ ]  ; :   │ LWR/'    │
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│  CTRL  [redo] Z  [undo]  X   [cut]   C  [copy] V  [paste]  B    │   │   N   [space] M     │ , <      │  . >   [ \ ]  / ?   │ ESC      │
+            //│  CTRL  [redo] Z  [undo]  X   [cut]   C  [copy] V  [paste]  B    │   │   N      │    M     │ , <      │  . >   [ \ ]  / ?   │ ESC      │
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 │  WIN     │  LWR     │  SPACE   │   │  ENTER   │  RSE     │  RALT    │
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
-//            bindings = <
-//&kp TAB    &kp Q  &kp W           &kp E        &kp R             &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P     &kp BSPC
-//&kp LSHFT  &kp A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G        &kp H    &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &kp SEMI  &lt NUM SQT
-//&kp LCTRL  &kp Z  &kp X           &kp C        &kp V             &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &kp FSLH  &kp ESC
-//                                  &kp LGUI     &mo NUM           &kp SPACE    &kp RET  &mo FUNC           &kp RALT
-//            >;
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  F  |  P  |  G  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP  |
-            // | CTRL |  A  |  R  |  S  |  T  |  D  |   |  H  |  N   |  E  |  I  |  O  | LWR/' |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  | / \ | ESC   |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
             bindings = <
-&kp TAB    &kp Q            &kp W           &kp F        &kp P             &kp G        &kp J    &kp L              &kp U        &kp Y            &kp SEMI             &kp BSPC
-&kp LSHFT  &hm LEFT_META A  &hm LEFT_ALT R  &hm LCTRL S  &hm LEFT_SHIFT T  &kp V        &kp H    &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT I  &kp O                &lt NUM SQT
-&kp LCTRL  &kp Z            &kp X           &kp C        &kp D             &kp B        &kp K    &kp M              &kp COMMA    &kp DOT          &hm SEMICOLON SLASH  &kp ESC
-                                            &kp LGUI     &mo NUM           &kp SPACE    &kp RET  &mo FUNC           &kp RALT
+&kp TAB    &kp Q  &kp W           &kp E        &kp R             &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P          &kp BSPC
+&kp LSHFT  &kp A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G        &kp H    &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &kp SEMI       &lt NUM SQT
+&kp LCTRL  &kp Z  &kp X           &kp C        &kp V             &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &hm BSLH FSLH  &kp ESC
+                                  &kp LGUI     &mo NUM           &kp SPACE    &kp RET  &mo FUNC           &kp RALT
             >;
         };
 
