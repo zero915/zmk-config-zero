@@ -249,16 +249,16 @@
 //                                  &kp LGUI     &mo NUM           &kp SPACE    &kp RET  &mo FUNC           &kp RALT
 //            >;
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  '  | BKSP |
-            // | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  /   |
-            // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  :  | ESC  |
+            // |  TAB |  Q  |  W  |  F  |  P  |  G  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP  |
+            // | CTRL |  A  |  R  |  S  |  T  |  D  |   |  H  |  N   |  E  |  I  |  O  | LWR/' |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  | / \ | ESC   |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q            &kp W             &kp F                     &kp P                  &kp B        &kp J        &kp L              &kp U             &kp Y              &kp APOS             &none
-&kp LSHFT  &hm LEFT_META A  &hm LEFT_ALT R  &shifthr LEFT_CONTROL S   &shifthr LEFT_SHIFT T  &kp G        &kp M        &shifthr RSHIFT N  &shifthr RCTRL E  &weak RIGHT_ALT I  &kp O                &none
-&kp LCTRL  &kp Z            &kp X             &kp C                     &kp D                  &kp V        &kp K        &kp H              &kp COMMA         &kp DOT            &hm SEMICOLON SLASH  &none
-                                            &hm LC(BACKSPACE) ESCAPE  &lt 1 BACKSPACE        &lt 2 TAB    &lt 2 ENTER  &lt 1 SPACE        &save
+&kp TAB    &kp Q            &kp W           &kp F        &kp P             &kp G        &kp J    &kp L              &kp U        &kp Y            &kp SEMI             &kp BSPC
+&kp LSHFT  &hm LEFT_META A  &hm LEFT_ALT R  &hm LCTRL S  &hm LEFT_SHIFT T  &kp V        &kp H    &hm RIGHT_SHIFT N  &hm RCTRL E  &hm RIGHT_ALT I  &kp O                &lt NUM SQT
+&kp LCTRL  &kp Z            &kp X           &kp C        &kp D             &kp B        &kp K    &kp M              &kp COMMA    &kp DOT          &hm SEMICOLON SLASH  &kp ESC
+                                            &kp LGUI     &mo NUM           &kp SPACE    &kp RET  &mo FUNC           &kp RALT
             >;
         };
 
