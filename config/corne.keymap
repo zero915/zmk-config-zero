@@ -46,16 +46,6 @@
     combos {
         compatible = "zmk,combos";
 
-        underscore {
-            bindings = <&kp UNDER>;
-            key-positions = <28 31>;
-        };
-
-        dash {
-            bindings = <&kp MINUS>;
-            key-positions = <4 7>;
-        };
-
         Clear_BLE_Profile {
             bindings = <&bt BT_CLR>;
             key-positions = <0 38 5>;
@@ -63,7 +53,7 @@
 
         space {
             bindings = <&kp SPACE>;
-            key-positions = <30 31>;
+            key-positions = <18 19>;
         };
 
         enter {
@@ -71,9 +61,14 @@
             key-positions = <17 16>;
         };
 
+        return {
+            bindings = <&kp RET>;
+            key-positions = <21 22>;
+        };
+
         caps {
             bindings = <&kp CAPS>;
-            key-positions = <5 6>;
+            key-positions = <12 13>;
         };
 
         escape {
@@ -81,34 +76,14 @@
             key-positions = <1 2>;
         };
 
-        left_bkt {
-            bindings = <&kp LBKT>;
-            key-positions = <3 4>;
-        };
-
         underline {
             bindings = <&kp UNDER>;
             key-positions = <8 7>;
         };
 
-        reload {
-            bindings = <&kp RC(R)>;
-            key-positions = <4 5>;
-        };
-
-        right_par {
-            bindings = <&kp RPAR>;
+        dash {
+            bindings = <&kp MINUS>;
             key-positions = <7 6>;
-        };
-
-        left_prc {
-            bindings = <&kp LBRC>;
-            key-positions = <2 3>;
-        };
-
-        right_prc {
-            bindings = <&kp RBRC>;
-            key-positions = <8 9>;
         };
 
         backslsh {
@@ -116,9 +91,9 @@
             key-positions = <33 34>;
         };
 
-        pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <9 10>;
+        reload {
+            bindings = <&kp RC(R)>;
+            key-positions = <4 5>;
         };
 
         undo {
@@ -146,11 +121,6 @@
             key-positions = <24 25>;
         };
 
-        return {
-            bindings = <&kp RET>;
-            key-positions = <21 22>;
-        };
-
         select_all {
             bindings = <&kp LC(A)>;
             key-positions = <13 14>;
@@ -159,6 +129,21 @@
         save {
             bindings = <&kp LC(S)>;
             key-positions = <14 15>;
+        };
+
+        all_caps {
+            bindings = <&kp CAPS>;
+            key-positions = <16 19>;
+        };
+
+        underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <28 31>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <4 7>;
         };
     };
 
@@ -234,11 +219,11 @@
             label = "BASE";
 
             //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-            //│  TAB     |    Q   [esc]  W     │     E    │    R [reload]  T    │   │   Y    [ - ]  U   [ _ ]  I     │   O      │    P     │ BSPC     │
+            //│  TAB     |     Q  [esc]  W     │     E    │    R [reload]  T    │   │   Y    [ - ]  U   [ _ ]  I     │   O      │    P     │ BSPC     │
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│  SHIFT   │    A   [all]  S   [save]  D    │    F    [ ↵ ]  G    │   │   H   [space]  J    │  K       │  L     [ ↵ ]  ; :   │ LWR/'    │
+            //│  SHIFT [CAPS]  A  [all]  S   [save]  D    │    F   [ ↵ ]   G    │   │   H   [space]  J    │    K     │   L    [ ↵ ]  ; :   │ LWR/'    │
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│  CTRL  [redo] Z  [undo]  X   [cut]   C  [copy] V  [paste]  B    │   │   N      │    M     │ , <      │  . >   [ \ ]  / ?   │ ESC      │
+            //│  CTRL  [redo]  Z [undo]  X   [cut]   C  [copy] V  [paste]  B    │   │   N      │    M     │   , <    │  . >   [ \ ]  / ?   │ ESC      │
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 │  WIN     │  LWR     │  SPACE   │   │  ENTER   │  RSE     │  RALT    │
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
