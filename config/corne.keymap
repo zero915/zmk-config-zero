@@ -145,6 +145,11 @@
             bindings = <&kp MINUS>;
             key-positions = <4 7>;
         };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <10 9>;
+        };
     };
 
     macros {
