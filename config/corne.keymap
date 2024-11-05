@@ -136,16 +136,6 @@
             key-positions = <16 19>;
         };
 
-        underscore {
-            bindings = <&kp UNDER>;
-            key-positions = <28 31>;
-        };
-
-        minus {
-            bindings = <&kp MINUS>;
-            key-positions = <4 7>;
-        };
-
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <10 9>;
@@ -234,10 +224,10 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp Q  &kp W           &kp E        &kp R             &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P          &kp BSPC
-&kp LSHFT  &kp A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G        &kp H    &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &kp SEMI       &lt NUM SQT
-&kp LCTRL  &kp Z  &kp X           &kp C        &kp V             &kp B        &kp N    &kp M              &kp COMMA    &kp DOT          &hm BSLH FSLH  &kp ESC
-                                  &kp LGUI     &mo NUM           &kp SPACE    &kp RET  &mo FUNC           &kp RALT
+&kp TAB    &kp Q  &kp W           &kp E        &kp R             &kp T        &kp Y    &kp U              &kp I               &kp O            &kp P          &kp BSPC
+&kp LSHFT  &kp A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G        &kp H    &hm RIGHT_SHIFT J  &hm RCTRL K         &hm RIGHT_ALT L  &kp SQT        &lt NUM SQT
+&kp LCTRL  &kp Z  &kp X           &kp C        &kp V             &kp B        &kp N    &kp M              &kp COMMA           &kp DOT          &hm SEMI FSLH  &kp ESC
+                                  &kp LGUI     &lt NUM TAB       &kp SPACE    &kp RET  &lt FUNC TAB       &hm RALT BACKSPACE
             >;
         };
 
