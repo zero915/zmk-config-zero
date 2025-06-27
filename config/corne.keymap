@@ -142,18 +142,21 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp B &kp R &kp Y &kp A &kp N &kp AT &kp P &kp E &kp C &kp J &kp O &kp DOT &kp C &kp O &kp M>;
+            wait-ms = <0>; 
         };
 
         git_status: git_status {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp I &kp T &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S>;
+            wait-ms = <0>; 
         };
 
         git_pull: git_pull {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp L &kp L>;
+            wait-ms = <0>; 
         };
 
         git_pull_many: git_pull_many {
@@ -165,30 +168,35 @@
                 &kp SPACE &kp LBRC &kp RBRC &kp SPACE
                 &kp P &kp U &kp L &kp L &kp SQT
             >;
+            wait-ms = <0>; 
         };
 
         git_push: git_push {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp S &kp H>;
+            wait-ms = <0>; 
         };
 
         git_add: git_add {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp I &kp T &kp SPACE &kp A &kp D &kp D &kp SPACE &kp DOT>;
+            wait-ms = <0>; 
         };
 
         git_diff: git_diff {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp I &kp T &kp SPACE &kp D &kp I &kp F &kp F>;
+            wait-ms = <0>; 
         };
 
         git_checkout: git_checkout {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp I &kp T &kp SPACE &kp C &kp H &kp E &kp C &kp K &kp O &kp U &kp T &kp SPACE>;
+            wait-ms = <0>; 
         };
 
         git_commit: git_commit {
@@ -198,45 +206,42 @@
                 &kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE 
                 &kp MINUS &kp M &kp SPACE &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT
             >;
+            wait-ms = <0>; 
         };
 
         start_dealsuite: start_dealsuite {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
-                &kp LC(R)          // Press CTRL + R
-                &kp C &kp E &kp L &kp E  // Type 'cele'
-                &macro_wait_time 1000
-                &kp RET            // Press Enter
-                &kp N1             // Type '1'
-                &kp RET            // Press Enter
+                // CTRL+R, 'cele', Return, press 1, Return
+                &kp LC(R)
+                &macro_wait_time 50
+                &kp C &kp E &kp L &kp E 
+                &macro_wait_time 1000 
+                &kp RET &kp N1 &kp RET
 
-                // New Terminal tab
+                // New Tab, CTRL+R, 'run d', Return
                 &macro_wait_time 2000
                 &kp LC(LS(N5))
-                &kp LC(R)          // Press CTRL + R
+                &kp LC(R)
                 &macro_wait_time 50
-                &kp R &kp U &kp N &kp SPACE &kp D  // Type 'run d'
-                &kp RET            // Press Enter
+                &kp R &kp U &kp N &kp SPACE &kp D &kp RET
 
-                // New Terminal tab
+                // New Tab, CTRL+R, type 'app.p', Return
                 &macro_wait_time 2000
                 &kp LC(LS(N5))
-                &kp LC(R)          // Press CTRL + R
+                &kp LC(R)
                 &macro_wait_time 50
-                &kp A &kp P &kp P &kp DOT &kp P  // Type 'app.p'
-                &kp RET            // Press Enter
+                &kp A &kp P &kp P &kp DOT &kp P &kp RET
 
-                // New Terminal tab
+                // New Tab, CTRL+R, 'runse', Return
                 &macro_wait_time 2000
                 &kp LC(LS(N5))
-                &kp LC(R)          // Press CTRL + R
+                &kp LC(R)
                 &macro_wait_time 50
-                &kp R &kp U &kp N &kp S &kp E // Type 'runse'
-                &kp RET            // Press Enter
+                &kp R &kp U &kp N &kp S &kp E &kp RET
             >;
         };
-
     };
 
     keymap {
@@ -336,16 +341,16 @@
             //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
             //|          |          | L.Click  |  ▲       | R.Click  |  S ▲     |   |          |          |          |          |          |          |
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |          |          |          |  S ▲     |          |          |
+            //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |  M.5     |          |  S ▲     |          |          |          |
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //|          |          |  S ◄     |          |  S ►     |          |   |  M.4     |  M.5     |  S ◄     |  S ▼     |  S ►     |          |
+            //|          |          |  S ◄     |          |  S ►     |          |   |  M.4     |  S ◄     |  S ▼     |  S ►     |          |          |
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 | L.Click  | R.Click  | M.Click  │   │ L.Click  | R.Click  | M.Click  |
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             bindings = <
-&none  &none  &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &msc SCRL_UP      &none      &none     &none          &none           &none           &none
-&none  &none  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN    &none      &none     &none          &msc SCRL_UP    &none           &none
-&none  &none  &none          &none          &none           &none             &mkp MB4   &mkp MB5  &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_RIGHT &none
+&none  &none  &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &msc SCRL_UP      &none      &none          &none          &none           &none  &none
+&none  &none  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN    &mkp MB5   &none          &msc SCRL_UP   &none           &none  &none
+&none  &none  &none          &none          &none           &none             &mkp MB4   &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &none  &none
                              &mkp LCLK      &mkp RCLK       &mkp MCLK         &mkp LCLK  &mkp RCLK &mkp MCLK
             >;
         };
