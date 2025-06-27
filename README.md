@@ -19,3 +19,4 @@ This is the firmware source for the **Corne** keyboard, a low-profile split ergo
 
 - [ZMK CLI](https://zmk.dev/docs/keymaps)
 
+![Screenshot](zero-corne.jpg)
